@@ -43,7 +43,7 @@ function App() {
       />
       {error ? (
         <h2>"Error fetching data : {error}"</h2>
-      ) : filteredCounties ? (
+      ) : search.length > 0 ? (
         <div className="container">
           {filteredCounties.map((country, index) => (
             <Card data={country} key={index} />
