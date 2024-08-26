@@ -22,7 +22,7 @@ function App() {
 
   const filterCountries = (search) => {
     const filter = counties.filter((country) =>
-      country.name.official.includes(search)
+      country.name.common.toLowerCase().includes(search.toLowerCase())
     );
     setFilteredCounties(filter);
   };
