@@ -54,7 +54,7 @@ h6 {
   margin: 20px;
 }
 
-.card {
+.countryCard {
   width: 180px;
   height: fit-content;
   border: 1px solid gainsboro;
@@ -66,13 +66,18 @@ h6 {
   align-items: center;
 }
 
-.card p {
+.countryCard p {
   font-weight: 700;
   font-size: 18px;
   margin-top: 10px;
 }
 
-input {
+.searchbox {
+  padding: 10px 0px;
+  background-color: cadetblue;
+}
+
+.searchbox input {
   width: 500px;
   padding: 2px 10px;
   border-radius: 5px;

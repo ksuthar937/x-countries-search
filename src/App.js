@@ -9,7 +9,7 @@ function App() {
   const [filteredCounties, setFilteredCounties] = useState([]);
 
   const fetchCounties = () => {
-    const URL = "https://xcountries-backend.azurewebsites.net/all";
+    const URL = "https://restcountries.com/v3.1/all";
 
     fetch(URL)
       .then((response) => response.json())
@@ -21,7 +21,9 @@ function App() {
   };
 
   const filterCountries = (search) => {
-    const filter = counties.filter((country) => country.name.includes(search));
+    const filter = counties.filter((country) =>
+      country.name.official.includes(search)
+    );
     setFilteredCounties(filter);
   };
   useEffect(() => {
@@ -34,13 +36,14 @@ function App() {
 
   return (
     <main>
-      <h1>XCountries</h1>
-      <input
-        type="text"
-        placeholder="Search for countries..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
+      <div className="searchbox">
+        <input
+          type="text"
+          placeholder="Search for countries..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
       {error ? (
         <h2>"Error fetching data : {error}"</h2>
       ) : search.length > 0 ? (
